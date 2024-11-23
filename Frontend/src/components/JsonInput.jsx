@@ -10,7 +10,7 @@ const JsonInput = ({ onResponse }) => {
       const parsedInput = JSON.parse(input);
       if (!parsedInput.data) throw new Error("Invalid JSON structure");
 
-      const response = await axios.post("/bfhl", parsedInput);
+      const response = await axios.post("https://bajaj-backend-kappa-blue.vercel.app/bfhl", parsedInput);
       onResponse(response.data);
       setError(""); // Clear error if successful
     } catch (err) {
